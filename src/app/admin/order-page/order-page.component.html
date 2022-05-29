@@ -1,0 +1,50 @@
+<div *ngIf="orders.length;else noOrders">
+  <h2>Таблица заказов</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Дата</th>
+      <th>Телефон</th>
+      <th>Имя</th>
+      <th>Адрес</th>
+      <th>Продукты</th>
+      <th>Количество</th>
+      <th>Цена</th>
+      <th>Оплата</th>
+      <th>Статус</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{order.date | date:	'dd MMM yyyy HH:mm'}}</td>
+      <td>{{order.phone}}</td>
+      <td>{{order.name}}</td>
+      <td>{{order.adress}}</td>
+      <td>
+        <div *ngFor="let product of order.orders">
+          {{product.title}}
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let product of order.orders">
+          {{product.count}}
+        </div>
+      </td>
+      <td>
+        {{order.price | currency}}
+      </td>
+      <td>
+        {{order.payment}}
+      </td>
+      <td>
+        <button mat-flat-button class="btn btn-success" (click)="remove(order.id)">Выполнен</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noOrders>
+  <h2>Нет заказов</h2>
+</ng-template>

@@ -1,0 +1,23 @@
+<div class="text-center">
+
+  <h2><b>{{product.title}}</b></h2>
+
+  <div class="div-image-box">
+    <img [src]="product.photo" [routerLink]="['/product', product.id]" class="cursor-pointer" alt="phone photo">
+  </div>
+
+  <p><b>Цена:</b> {{product.price | currency}}</p>
+
+  <div class="flex-center">
+    <button *ngIf="!product.isFav" mat-flat-button (click)="addToFavourite(product)" class="btn btn-dark">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+    <button *ngIf="product.isFav" mat-flat-button (click)="deleteFromFavourite(product)" class="btn btn-dark">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-flat-button color="primary" (click)="addToCart(product)" class="btn btn-dark">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+  </div>
+
+</div>

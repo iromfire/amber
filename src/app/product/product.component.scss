@@ -1,0 +1,24 @@
+p{
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+button{
+  margin-right: .5rem;
+}
+
+h2{
+  margin-bottom: 1rem;
+}
+
+.div-image-box{
+  display: flex;
+  margin: 0 auto;
+  height: 350px;
+  width: 250px;
+  overflow: hidden;
+  img{
+    object-fit: contain;
+  }
+}
+

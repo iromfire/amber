@@ -1,0 +1,32 @@
+.flex{
+  display: flex;
+  p{
+    margin-bottom: .5rem;
+  }
+}
+
+.item{
+  display: block;
+}
+
+button{
+  margin-top: 1rem;
+}
+
+h2{
+  margin-bottom: .5rem;
+}
+
+.product{
+  margin-top: 2rem;
+}
+
+.image-box{
+  display: flex;
+  width: 300px;
+  height: 400px;
+  margin-right: 3rem;
+  img{
+    object-fit: contain;
+  }
+}
